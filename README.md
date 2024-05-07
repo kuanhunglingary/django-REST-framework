@@ -4,3 +4,4 @@ Follow CRUD operations in Django Rest Framework to make To-Do List API <br>
 ![Read](./drfToDoList/drfToDoList_Read.jpg)
 ![Update](./drfToDoList/drfToDoList_Update.jpg)
 ![Delete](./drfToDoList/drfToDoList_Delete.jpg)
+![log](./drfToDoList/drfToDoList_log.jpg)
