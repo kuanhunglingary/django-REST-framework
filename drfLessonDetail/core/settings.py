@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import datetime
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-mg%9kzpxll(0z=i-5twnr_y4!zt57z+ox)y)g9$$3l!jsr3hhk"
+SECRET_KEY = "django-insecure-u=255=h3eslr0xrn87ees_$r^(-uh7y=vr1g9_)#ypvu^t+4m-"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "drf_spectacular",
     "corsheaders",
+    "schema_graph",
     # Local
-    "todo",
+    "Api",
 ]
 
 MIDDLEWARE = [
@@ -84,12 +85,8 @@ WSGI_APPLICATION = "core.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "drfTodoList",
-        "USER": "postgres",
-        "PASSWORD": "1",
-        "HOST": "localhost",
-        "PORT": "5432",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -134,33 +131,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ],
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-    ],
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-}
-
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": datetime.timedelta(minutes=5),
-    "REFRESH_TOKEN_LIFETIME": datetime.timedelta(days=1),
-    "ROTATE_REFRESH_TOKENS": True,
-}
-
-SPECTACULAR_SETTINGS = {
-    "TITLE": "Your Project API",
-    "DESCRIPTION": "Your project description",
-    "VERSION": "1.0.0",
-    "SERVE_INCLUDE_SCHEMA": False,
-}
-
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-]

@@ -1,0 +1,1 @@
+Assume the bookstore propose a process to hit the sotre shelves. Bookstore need to follow the process and put at the right place.
