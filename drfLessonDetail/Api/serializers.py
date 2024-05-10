@@ -1,5 +1,6 @@
-from Api import models as Api_models
 from rest_framework import serializers
+
+from Api import models as Api_models
 
 
 class BookstoreSerializer(serializers.ModelSerializer):
@@ -149,6 +150,15 @@ class BookInfoSerializer(serializers.ModelSerializer):
                 **task_6_publishingHouse_data
             )
 
+        if task_6_publishingHouseManager_data is None:
+            task6_publishingHouse = None
+        else:
+            task6_publishingHouseManager = (
+                Api_models.PublishingHouseManager.objects.create(
+                    **task_6_publishingHouseManager_data
+                )
+            )
+
         bookInfo = Api_models.BookInfo.objects.create(
             bookName_all=bookName,
             bookseller_all=bookseller,
@@ -157,6 +167,7 @@ class BookInfoSerializer(serializers.ModelSerializer):
             task_6_printingManufacturer=task6_printingManufacturer,
             task_6_printingManager=task6_printingManager,
             task_6_publishingHouse=task6_publishingHouse,
+            task_6_publishingHouseManager=task6_publishingHouseManager,
             **validated_data
         )
         return bookInfo
@@ -227,7 +238,7 @@ class BookInfoSerializer(serializers.ModelSerializer):
 
         if task_6_publishingHouseManager_data:
             task_6_publishingHouseManager_instance = (
-                instance.task_6_publishingHouseManager
+                instance.task_6_publishingHouseManager_data
             )
             task_6_publishingHouseManager_serializer = PublishingHouseManagerSerializer(
                 task_6_publishingHouseManager_instance,
