@@ -1,6 +1,7 @@
-from Api import views as Api_views
 from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshSlidingView
+
+from Api import views as Api_views
 
 app_name = "Api"
 
@@ -42,195 +43,195 @@ BookNameUrl = [
 
 BooksellerUrl = [
     path(
-        "bookstore/",
+        "bookseller/",
         Api_views.BooksellerViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="bookseller",
     ),
     path(
-        "bookstore/<int:pk>",
+        "bookseller/<int:pk>",
         Api_views.BooksellerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="bookseller-pk",
     ),
 ]
 
 
 PictureTimeUrl = [
     path(
-        "bookstore/",
+        "pictureTime/",
         Api_views.PictureTimeViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="pictureTime",
     ),
     path(
-        "bookstore/<int:pk>",
+        "pictureTime/<int:pk>",
         Api_views.PictureTimeViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="pictureTime-pk",
     ),
 ]
 
 
 Task5Url = [
     path(
-        "bookstore/",
+        "task5/",
         Api_views.Task5ViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="task5",
     ),
     path(
-        "bookstore/<int:pk>",
+        "task5/<int:pk>",
         Api_views.Task5ViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="task5-pk",
     ),
 ]
 
 
 PlaceUrl = [
     path(
-        "bookstore/",
+        "place/",
         Api_views.PlaceViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="place",
     ),
     path(
-        "bookstore/<int:pk>",
+        "place/<int:pk>",
         Api_views.PlaceViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="place-pk",
     ),
 ]
 
 
 PrintingManufacturerUrl = [
     path(
-        "bookstore/",
+        "printingManufacturer/",
         Api_views.PrintingManufacturerViewSet.as_view(
             {"get": "list", "post": "create"}
         ),
-        name="bookstore",
+        name="printingManufacturer",
     ),
     path(
-        "bookstore/<int:pk>",
+        "printingManufacturer/<int:pk>",
         Api_views.PrintingManufacturerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="printingManufacturer-pk",
     ),
 ]
 
 
 PrintingManagerUrl = [
     path(
-        "bookstore/",
+        "printingManager/",
         Api_views.PrintingManagerViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="printingManager",
     ),
     path(
-        "bookstore/<int:pk>",
+        "printingManager/<int:pk>",
         Api_views.PrintingManagerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="printingManager-pk",
     ),
 ]
 
 
 PublishingHouseUrl = [
     path(
-        "bookstore/",
+        "publishingHouse/",
         Api_views.PublishingHouseViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="publishingHouse",
     ),
     path(
-        "bookstore/<int:pk>",
+        "publishingHouse/<int:pk>",
         Api_views.PublishingHouseViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="publishingHouse-pk",
     ),
 ]
 
 
 PublishingHouseManagerUrl = [
     path(
-        "bookstore/",
+        "publishingHouseManager/",
         Api_views.PublishingHouseManagerViewSet.as_view(
             {"get": "list", "post": "create"}
         ),
-        name="bookstore",
+        name="publishingHouseManager",
     ),
     path(
-        "bookstore/<int:pk>",
+        "publishingHouseManager/<int:pk>",
         Api_views.PublishingHouseManagerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="publishingHouseManager-pk",
     ),
 ]
 
 
 Task7Url = [
     path(
-        "bookstore/",
+        "task7/",
         Api_views.Task7ViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="task7",
     ),
     path(
-        "bookstore/<int:pk>",
+        "task7/<int:pk>",
         Api_views.Task7ViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="task7-pk",
     ),
 ]
 
 
 SignatureUrl = [
     path(
-        "bookstore/",
+        "signature/",
         Api_views.SignatureViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="signature",
     ),
     path(
-        "bookstore/<int:pk>",
+        "signature/<int:pk>",
         Api_views.SignatureViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="signature-pk",
     ),
 ]
 
 
 StampUrl = [
     path(
-        "bookstore/",
+        "stamp/",
         Api_views.StampViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="stamp",
     ),
     path(
-        "bookstore/<int:pk>",
+        "stamp/<int:pk>",
         Api_views.StampViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="stamp-pk",
     ),
 ]
 
 BookInfoUrl = [
     path(
-        "bookstore/",
+        "bookInfo/",
         Api_views.BookInfoViewSet.as_view({"get": "list", "post": "create"}),
-        name="bookstore",
+        name="bookInfo",
     ),
     path(
-        "bookstore/<int:pk>",
+        "bookInfo/<int:pk>",
         Api_views.BookInfoViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
-        name="bookstore-pk",
+        name="bookInfo-pk",
     ),
 ]
 

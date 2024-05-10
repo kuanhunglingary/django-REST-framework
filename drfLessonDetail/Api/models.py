@@ -127,7 +127,13 @@ class PublishingHouseManager(models.Model):
 
 
 class Task7(models.Model):
-    task7 = models.Model(null=True, blank=True, verbose_name="第 7 個 任務")
+    task7 = models.TextField(null=True, blank=True, verbose_name="第7個任務")
+
+    class Meta:
+        db_table = "Task7"
+
+    def __str__(self):
+        return self.task7
 
 
 class Signature(models.Model):
@@ -143,7 +149,9 @@ class Signature(models.Model):
 
 
 class Stamp(models.Model):
-    stamp = models.TextField(null=True, blank=True, verbose_name="公司大章")
+    stamp = models.ImageField(
+        upload_to=signature_upload_path, null=True, blank=True, verbose_name="書局大章"
+    )
 
     class Meta:
         db_table = "Stamp"
@@ -154,7 +162,7 @@ class Stamp(models.Model):
 
 class BookInfo(models.Model):
     bookName_all = models.ForeignKey(BookName, on_delete=models.SET_NULL, null=True)
-    bookseller_all = models.ForeignKey(Bookseller, on_delete=models.SER_NULL, null=True)
+    bookseller_all = models.ForeignKey(Bookseller, on_delete=models.SET_NULL, null=True)
     picture_time_all = models.ImageField(
         upload_to=picture_upload_path,
         null=True,
