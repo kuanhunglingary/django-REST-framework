@@ -4,11 +4,11 @@ from django.db import models
 
 
 def picture_upload_path(instance, filename):
-    return os.path.join("lesson2_picture", filename)
+    return os.path.join("picture", filename)
 
 
 def signature_upload_path(instance, filename):
-    return os.path.join("studentSignature", filename)
+    return os.path.join("Signature", filename)
 
 
 def stamp_upload_path(instance, filename):
@@ -101,7 +101,7 @@ class PrintingManager(models.Model):
         db_table = "MachineryManager"
 
     def __str__(self):
-        return self.machineryManager
+        return self.printingManager
 
 
 class PublishingHouse(models.Model):
@@ -111,7 +111,7 @@ class PublishingHouse(models.Model):
         db_table = "ElectricalCoOrganizer"
 
     def __str__(self):
-        return self.electricalCoOrganizer
+        return self.publishingHouse
 
 
 class PublishingHouseManager(models.Model):
@@ -123,7 +123,7 @@ class PublishingHouseManager(models.Model):
         db_table = "ElectricalManager"
 
     def __str__(self):
-        return self.electricalManager
+        return self.publishingHouseManager
 
 
 class Task7(models.Model):

@@ -3,6 +3,23 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshSlid
 
 from Api import views as Api_views
 
+from .views import (
+    BookInfoViewSet,
+    BookNameViewSet,
+    BooksellerViewSet,
+    BookstoreViewSet,
+    PictureTimeViewSet,
+    PlaceViewSet,
+    PrintingManagerViewSet,
+    PrintingManufacturerViewSet,
+    PublishingHouseManagerViewSet,
+    PublishingHouseViewSet,
+    SignatureViewSet,
+    StampViewSet,
+    Task5ViewSet,
+    Task7ViewSet,
+)
+
 app_name = "Api"
 
 TokenUrl = [
@@ -10,30 +27,58 @@ TokenUrl = [
     path("token/refresh/", TokenRefreshSlidingView.as_view(), name="token-refresh"),
 ]
 
+# BookstoreUrl = [
+#     path(
+#         "bookstore/",
+#         Api_views.BookstoreViewSet.as_view({"get": "list", "post": "create"}),
+#         name="bookstore",
+#     ),
+#     path(
+#         "bookstore/<int:pk>",
+#         Api_views.BookstoreViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="bookstore-pk",
+#     ),
+# ]
 BookstoreUrl = [
     path(
         "bookstore/",
-        Api_views.BookstoreViewSet.as_view({"get": "list", "post": "create"}),
+        BookstoreViewSet.as_view({"get": "list", "post": "create"}),
         name="bookstore",
     ),
     path(
         "bookstore/<int:pk>",
-        Api_views.BookstoreViewSet.as_view(
+        BookstoreViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="bookstore-pk",
     ),
 ]
 
+# BookNameUrl = [
+#     path(
+#         "booklName/",
+#         Api_views.BookNameViewSet.as_view({"get": "list", "post": "create"}),
+#         name="booklName",
+#     ),
+#     path(
+#         "booklName/<int:pk>",
+#         Api_views.BookNameViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="booklName-pk",
+#     ),
+# ]
 BookNameUrl = [
     path(
         "booklName/",
-        Api_views.BookNameViewSet.as_view({"get": "list", "post": "create"}),
+        BookNameViewSet.as_view({"get": "list", "post": "create"}),
         name="booklName",
     ),
     path(
         "booklName/<int:pk>",
-        Api_views.BookNameViewSet.as_view(
+        BookNameViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="booklName-pk",
@@ -41,15 +86,29 @@ BookNameUrl = [
 ]
 
 
+# BooksellerUrl = [
+#     path(
+#         "bookseller/",
+#         Api_views.BooksellerViewSet.as_view({"get": "list", "post": "create"}),
+#         name="bookseller",
+#     ),
+#     path(
+#         "bookseller/<int:pk>",
+#         Api_views.BooksellerViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="bookseller-pk",
+#     ),
+# ]
 BooksellerUrl = [
     path(
         "bookseller/",
-        Api_views.BooksellerViewSet.as_view({"get": "list", "post": "create"}),
+        BooksellerViewSet.as_view({"get": "list", "post": "create"}),
         name="bookseller",
     ),
     path(
         "bookseller/<int:pk>",
-        Api_views.BooksellerViewSet.as_view(
+        BooksellerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="bookseller-pk",
@@ -57,15 +116,29 @@ BooksellerUrl = [
 ]
 
 
+# PictureTimeUrl = [
+#     path(
+#         "pictureTime/",
+#         Api_views.PictureTimeViewSet.as_view({"get": "list", "post": "create"}),
+#         name="pictureTime",
+#     ),
+#     path(
+#         "pictureTime/<int:pk>",
+#         Api_views.PictureTimeViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="pictureTime-pk",
+#     ),
+# ]
 PictureTimeUrl = [
     path(
         "pictureTime/",
-        Api_views.PictureTimeViewSet.as_view({"get": "list", "post": "create"}),
+        PictureTimeViewSet.as_view({"get": "list", "post": "create"}),
         name="pictureTime",
     ),
     path(
         "pictureTime/<int:pk>",
-        Api_views.PictureTimeViewSet.as_view(
+        PictureTimeViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="pictureTime-pk",
@@ -73,49 +146,89 @@ PictureTimeUrl = [
 ]
 
 
+# Task5Url = [
+#     path(
+#         "task5/",
+#         Api_views.Task5ViewSet.as_view({"get": "list", "post": "create"}),
+#         name="task5",
+#     ),
+#     path(
+#         "task5/<int:pk>",
+#         Api_views.Task5ViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="task5-pk",
+#     ),
+# ]
 Task5Url = [
     path(
         "task5/",
-        Api_views.Task5ViewSet.as_view({"get": "list", "post": "create"}),
+        Task5ViewSet.as_view({"get": "list", "post": "create"}),
         name="task5",
     ),
     path(
         "task5/<int:pk>",
-        Api_views.Task5ViewSet.as_view(
+        Task5ViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="task5-pk",
     ),
 ]
 
-
+# PlaceUrl = [
+#     path(
+#         "place/",
+#         Api_views.PlaceViewSet.as_view({"get": "list", "post": "create"}),
+#         name="place",
+#     ),
+#     path(
+#         "place/<int:pk>",
+#         Api_views.PlaceViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="place-pk",
+#     ),
+# ]
 PlaceUrl = [
     path(
         "place/",
-        Api_views.PlaceViewSet.as_view({"get": "list", "post": "create"}),
+        PlaceViewSet.as_view({"get": "list", "post": "create"}),
         name="place",
     ),
     path(
         "place/<int:pk>",
-        Api_views.PlaceViewSet.as_view(
+        PlaceViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="place-pk",
     ),
 ]
 
-
+# PrintingManufacturerUrl = [
+#     path(
+#         "printingManufacturer/",
+#         Api_views.PrintingManufacturerViewSet.as_view(
+#             {"get": "list", "post": "create"}
+#         ),
+#         name="printingManufacturer",
+#     ),
+#     path(
+#         "printingManufacturer/<int:pk>",
+#         Api_views.PrintingManufacturerViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="printingManufacturer-pk",
+#     ),
+# ]
 PrintingManufacturerUrl = [
     path(
         "printingManufacturer/",
-        Api_views.PrintingManufacturerViewSet.as_view(
-            {"get": "list", "post": "create"}
-        ),
+        PrintingManufacturerViewSet.as_view({"get": "list", "post": "create"}),
         name="printingManufacturer",
     ),
     path(
         "printingManufacturer/<int:pk>",
-        Api_views.PrintingManufacturerViewSet.as_view(
+        PrintingManufacturerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="printingManufacturer-pk",
@@ -123,15 +236,29 @@ PrintingManufacturerUrl = [
 ]
 
 
+# PrintingManagerUrl = [
+#     path(
+#         "printingManager/",
+#         Api_views.PrintingManagerViewSet.as_view({"get": "list", "post": "create"}),
+#         name="printingManager",
+#     ),
+#     path(
+#         "printingManager/<int:pk>",
+#         Api_views.PrintingManagerViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="printingManager-pk",
+#     ),
+# ]
 PrintingManagerUrl = [
     path(
         "printingManager/",
-        Api_views.PrintingManagerViewSet.as_view({"get": "list", "post": "create"}),
+        PrintingManagerViewSet.as_view({"get": "list", "post": "create"}),
         name="printingManager",
     ),
     path(
         "printingManager/<int:pk>",
-        Api_views.PrintingManagerViewSet.as_view(
+        PrintingManagerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="printingManager-pk",
@@ -139,15 +266,29 @@ PrintingManagerUrl = [
 ]
 
 
+# PublishingHouseUrl = [
+#     path(
+#         "publishingHouse/",
+#         Api_views.PublishingHouseViewSet.as_view({"get": "list", "post": "create"}),
+#         name="publishingHouse",
+#     ),
+#     path(
+#         "publishingHouse/<int:pk>",
+#         Api_views.PublishingHouseViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="publishingHouse-pk",
+#     ),
+# ]
 PublishingHouseUrl = [
     path(
         "publishingHouse/",
-        Api_views.PublishingHouseViewSet.as_view({"get": "list", "post": "create"}),
+        PublishingHouseViewSet.as_view({"get": "list", "post": "create"}),
         name="publishingHouse",
     ),
     path(
         "publishingHouse/<int:pk>",
-        Api_views.PublishingHouseViewSet.as_view(
+        PublishingHouseViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="publishingHouse-pk",
@@ -155,17 +296,31 @@ PublishingHouseUrl = [
 ]
 
 
+# PublishingHouseManagerUrl = [
+#     path(
+#         "publishingHouseManager/",
+#         Api_views.PublishingHouseManagerViewSet.as_view(
+#             {"get": "list", "post": "create"}
+#         ),
+#         name="publishingHouseManager",
+#     ),
+#     path(
+#         "publishingHouseManager/<int:pk>",
+#         Api_views.PublishingHouseManagerViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="publishingHouseManager-pk",
+#     ),
+# ]
 PublishingHouseManagerUrl = [
     path(
         "publishingHouseManager/",
-        Api_views.PublishingHouseManagerViewSet.as_view(
-            {"get": "list", "post": "create"}
-        ),
+        PublishingHouseManagerViewSet.as_view({"get": "list", "post": "create"}),
         name="publishingHouseManager",
     ),
     path(
         "publishingHouseManager/<int:pk>",
-        Api_views.PublishingHouseManagerViewSet.as_view(
+        PublishingHouseManagerViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="publishingHouseManager-pk",
@@ -173,15 +328,29 @@ PublishingHouseManagerUrl = [
 ]
 
 
+# Task7Url = [
+#     path(
+#         "task7/",
+#         Api_views.Task7ViewSet.as_view({"get": "list", "post": "create"}),
+#         name="task7",
+#     ),
+#     path(
+#         "task7/<int:pk>",
+#         Api_views.Task7ViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="task7-pk",
+#     ),
+# ]
 Task7Url = [
     path(
         "task7/",
-        Api_views.Task7ViewSet.as_view({"get": "list", "post": "create"}),
+        Task7ViewSet.as_view({"get": "list", "post": "create"}),
         name="task7",
     ),
     path(
         "task7/<int:pk>",
-        Api_views.Task7ViewSet.as_view(
+        Task7ViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="task7-pk",
@@ -189,15 +358,29 @@ Task7Url = [
 ]
 
 
+# SignatureUrl = [
+#     path(
+#         "signature/",
+#         Api_views.SignatureViewSet.as_view({"get": "list", "post": "create"}),
+#         name="signature",
+#     ),
+#     path(
+#         "signature/<int:pk>",
+#         Api_views.SignatureViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="signature-pk",
+#     ),
+# ]
 SignatureUrl = [
     path(
         "signature/",
-        Api_views.SignatureViewSet.as_view({"get": "list", "post": "create"}),
+        SignatureViewSet.as_view({"get": "list", "post": "create"}),
         name="signature",
     ),
     path(
         "signature/<int:pk>",
-        Api_views.SignatureViewSet.as_view(
+        SignatureViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="signature-pk",
@@ -205,30 +388,58 @@ SignatureUrl = [
 ]
 
 
+# StampUrl = [
+#     path(
+#         "stamp/",
+#         Api_views.StampViewSet.as_view({"get": "list", "post": "create"}),
+#         name="stamp",
+#     ),
+#     path(
+#         "stamp/<int:pk>",
+#         Api_views.StampViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="stamp-pk",
+#     ),
+# ]
 StampUrl = [
     path(
         "stamp/",
-        Api_views.StampViewSet.as_view({"get": "list", "post": "create"}),
+        StampViewSet.as_view({"get": "list", "post": "create"}),
         name="stamp",
     ),
     path(
         "stamp/<int:pk>",
-        Api_views.StampViewSet.as_view(
+        StampViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="stamp-pk",
     ),
 ]
 
+# BookInfoUrl = [
+#     path(
+#         "bookInfo/",
+#         Api_views.BookInfoViewSet.as_view({"get": "list", "post": "create"}),
+#         name="bookInfo",
+#     ),
+#     path(
+#         "bookInfo/<int:pk>",
+#         Api_views.BookInfoViewSet.as_view(
+#             {"get": "retrieve", "patch": "update", "delete": "destroy"}
+#         ),
+#         name="bookInfo-pk",
+#     ),
+# ]
 BookInfoUrl = [
     path(
         "bookInfo/",
-        Api_views.BookInfoViewSet.as_view({"get": "list", "post": "create"}),
+        BookInfoViewSet.as_view({"get": "list", "post": "create"}),
         name="bookInfo",
     ),
     path(
         "bookInfo/<int:pk>",
-        Api_views.BookInfoViewSet.as_view(
+        BookInfoViewSet.as_view(
             {"get": "retrieve", "patch": "update", "delete": "destroy"}
         ),
         name="bookInfo-pk",
